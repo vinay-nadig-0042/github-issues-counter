@@ -18,6 +18,7 @@ Process
 -------
 
 1. The app is a Sinatra App that uses [Octokit](https://github.com/octokit/octokit.rb/) library to access Github API
+2. Octokit uses [Github Access Token](https://github.com/blog/1509-personal-api-tokens) to authenticate. The Token itself is set through an Environment Variable.
 2. There are two simple routes defined. `GET /` & `POST /gihub-issues`
 3. An input field takes the github url(should be a https Github url, ssh format not supported as of now)
 4. An AJAX call is made to the backend server with the body consisting of the url entered.
@@ -47,3 +48,11 @@ Improvements
 5. Add support for shortened URLs & SSH format URLs.
 6. Introduce Server side caching for popular repos if there is high traffic.
 7. Introduce User sessions that can be used for per user server side caching of results for faster fetches.
+
+References
+----------
+
+1. [Github API](https://developer.github.com/v3/)
+2. [Octokit](https://github.com/octokit/octokit.rb/)
+3. [Sinatra](http://www.sinatrarb.com/)
+4. [Materialize](http://materializecss.com/)
