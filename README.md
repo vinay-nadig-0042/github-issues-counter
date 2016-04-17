@@ -49,6 +49,20 @@ Improvements
 6. Introduce Server side caching for popular repos if there is high traffic.
 7. Introduce User sessions that can be used for per user server side caching of results for faster fetches.
 
+Deployment
+----------
+
+1. Create new App on Heroku
+2. Install Heroku Toolbelt
+3. Log into Heroku with `heroku login`
+4. Set remote `heroku` to `https://git.heroku.com/<your-app-name>.git`
+
+    ```
+    git remote add heroku https://git.heroku.com/<your-app-name>.git
+    ```
+5. Set environment variable `GITHUB_ACCESS_TOKEN` in the Heroku App. Instructions on generating here - https://github.com/blog/1509-personal-api-tokens
+6. Push to heroku - `git push heroku master`
+
 References
 ----------
 
