@@ -1,6 +1,8 @@
 Github Issues Counter
 ---------------------
 
+### [Link to Heroku App](http://github-issues-counter.herokuapp.com/)
+
 Simple Web App to fetch the following metrics from a public Github Repo
 
 * Total number of open issues
@@ -10,8 +12,6 @@ Simple Web App to fetch the following metrics from a public Github Repo
 * Number of open issues that were opened more than 24 hours ago but less than 7 days ago
 
 * Number of open issues that were opened more than 7 days ago 
-
-[Link to Heroku App](http://github-issues-counter.herokuapp.com/)
 
 
 Process
@@ -33,7 +33,7 @@ Process
     ```
     Total Issues Count - Last Week Issues Count
     ```
-7. If the call does not succeed, a error message is sent back.
+7. If the AJAX call does not succeed, a error message is sent back.
 8. The client receives the metrics & updates the web page with the metrics.
 
 
@@ -44,4 +44,6 @@ Improvements
 2. All github related methods & errors are defined in [GithubHelpers](helpers/github_helpers.rb). The errors can be moved to a separate module for a cleaner Interface.
 3. [Github API Token](https://github.com/blog/1509-personal-api-tokens) is used which limits the API request rate to 5000 req/hour. Could be a problem if there are a lot of simultaneous requests for Repos which contain [large number of issues](https://github.com/rails/rails/issues)
 4. We fetch a list of all the issues to just get the count of issues right now. Involves a lot of bandwidth wastage at the cost of ease of development. A better approach would be to use the [since](https://developer.github.com/v3/issues/#parameters) parameter from the [list issues endpoint](https://developer.github.com/v3/issues/#list-issues)
-
+5. Add support for shortened URLs & SSH format URLs.
+6. Introduce Server side caching for popular repos if there is high traffic.
+7. Introduce User sessions that can be used for per user server side caching of results for faster fetches.
