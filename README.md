@@ -19,7 +19,7 @@ Process
 
 1. The app is a Sinatra App that uses [Octokit](https://github.com/octokit/octokit.rb/) library to access Github API
 2. Octokit uses [Github Access Token](https://github.com/blog/1509-personal-api-tokens) to authenticate. The Token itself is set through an Environment Variable.
-2. There are two simple routes defined. `GET /` & `POST /gihub-issues`
+2. There are two simple routes defined. `GET /` & `POST /github-issues`
 3. An input field takes the github url(should be a https Github url, ssh format not supported as of now)
 4. An AJAX call is made to the backend server with the body consisting of the url entered.
 5. The App validates that the URL is valid and that it's a valid Github URL. If not, an error is returned to the client.
